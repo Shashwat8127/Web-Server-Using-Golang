@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SHASHWAT - Contact Form</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background: linear-gradient(135deg, #4facfe, #00f2fe);
+      font-family: 'Poppins', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .form-container {
+      background: #fff;
+      padding: 35px 45px;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      width: 380px;
+      animation: slideUp 0.8s ease;
+    }
+
+    @keyframes slideUp {
+      from { transform: translateY(50px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    .form-container h1 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 25px;
+      font-weight: 600;
+      font-size: 28px;
+      position: relative;
+    }
+
+    .form-container h1::after {
+      content: '';
+      width: 60px;
+      height: 3px;
+      background: #4facfe;
+      display: block;
+      margin: 8px auto 0;
+      border-radius: 2px;
+    }
+
+    .form-container label {
+      display: block;
+      margin-bottom: 6px;
+      color: #555;
+      font-weight: 500;
+    }
+
+    .form-container input[type="text"] {
+      width: 100%;
+      padding: 12px 14px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      transition: 0.3s;
+      font-size: 15px;
+    }
+
+    .form-container input[type="text"]:focus {
+      border-color: #4facfe;
+      box-shadow: 0 0 5px rgba(79, 172, 254, 0.5);
+      outline: none;
+    }
+
+    .form-container input[type="submit"] {
+      width: 100%;
+      padding: 14px;
+      background: linear-gradient(to right, #43e97b, #38f9d7);
+      border: none;
+      border-radius: 10px;
+      color: #fff;
+      font-size: 17px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    .form-container input[type="submit"]:hover {
+      background: linear-gradient(to right, #38f9d7, #43e97b);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(56, 249, 215, 0.4);
+    }
+
+    .input-icon {
+      position: relative;
+    }
+
+    .input-icon input {
+      padding-left: 35px;
+    }
+
+    .input-icon::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 10px;
+      transform: translateY(-50%);
+      width: 16px;
+      height: 16px;
+      background-size: contain;
+      background-repeat: no-repeat;
+      opacity: 0.6;
+    }
+
+    .input-icon.name::before {
+      background-image: url('https://img.icons8.com/ios-filled/50/000000/user.png');
+    }
+
+    .input-icon.address::before {
+      background-image: url('https://img.icons8.com/ios-filled/50/000000/home.png');
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <h1>SHASHWAT</h1>
+    <form action="/form" method="POST">
+      <label for="name">Name</label>
+      <div class="input-icon name">
+        <input type="text" id="name" name="name" placeholder="Enter your name" required>
+      </div>
+
+      <label for="address">Address</label>
+      <div class="input-icon address">
+        <input type="text" id="address" name="address" placeholder="Enter your address" required>
+      </div>
+
+      <input type="submit" value="Submit">
+    </form>
+  </div>
+</body>
+</html>
